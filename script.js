@@ -1,5 +1,11 @@
-const encrypt = (payload, secret) => {
-  // your code here and return token
+const encrypt = require("./encrypt");
+
+const secretKey = "mySecretKey"; // Change this to a secure secret key
+
+const payload = {
+    userId: 123,
+    username: "testuser",
 };
 
-module.exports = encrypt;
+const token = encrypt(payload, secretKey);
+console.log("Encrypted JWT:", token);
